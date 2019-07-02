@@ -1,0 +1,61 @@
+@function rem($pixels, $context: $mainFontSize) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}
+
+@mixin abs-centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+@mixin atXS() {
+    @media only screen and (min-width: $phone) {
+        @content;
+    }
+}
+
+@mixin atS() {
+    @media only screen and (min-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin atM() {
+    @media only screen and (min-width: $smallDesktop) {
+        @content;
+    }
+}
+
+@mixin atL() {
+    @media only screen and (min-width: $desktop) {
+        @content;
+    }
+}
+
+@mixin atXL() {
+    @media only screen and (min-width: $largeDesktop) {
+        @content;
+    }
+}
+
+@mixin atXXL() {
+    @media only screen and (min-width: $extraLargeDesktop) {
+        @content;
+    }
+}
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+}

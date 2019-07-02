@@ -1,0 +1,1 @@
+"use strict";$(document).ready(function(){$("header .col").html("hi!")});
